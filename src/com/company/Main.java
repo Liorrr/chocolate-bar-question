@@ -6,13 +6,14 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-	//
+	
         birthdaySplit(2,6);
 
     }
-
+    //method that return which sections can be shared with poor Ron
     public static void birthdaySplit (int a, int b){
         int[] choco = createChocoBar();
+        //print the array to console to review the results.
         System.out.println(Arrays.toString(choco));
 
         for (int i = 0; i < ((choco.length-a)+1); i++){
@@ -34,16 +35,18 @@ public class Main {
 
 
     }
-
+// create random chocolate bar with 60 cubes of max int value of 31 - can be changed for lower int numbers
     public static int[] createChocoBar (){
         Random random = new Random();
         int[] chocolateBar = new int[60];
         for (int i = 0; i < chocolateBar.length; i++){
             if (chocolateBar[i] == 0){
+                // change bound to get the brother higher chance to get some chocolate.
                 chocolateBar[i] = (random.nextInt(31)+1);
             }
 
         }
+        //for testing - print the created array
         //System.out.println(Arrays.toString(chocolateBar));
         return chocolateBar;
     }
